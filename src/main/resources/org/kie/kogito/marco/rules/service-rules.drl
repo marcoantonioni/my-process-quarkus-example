@@ -1,0 +1,16 @@
+package org.kie.kogito.marco.rules;
+
+unit ServiceUnit;
+
+import org.kie.kogito.marco.model.RequestData;
+
+rule "Is use of rules requested"
+
+when
+    $requestData: /requestData[ useRules ]
+then
+    System.out.println("===> RULE: 'Is use of rules requested': found 'useRules' as true");    
+    modify($requestData) {
+    	setRuleResult(true)
+    };
+end
