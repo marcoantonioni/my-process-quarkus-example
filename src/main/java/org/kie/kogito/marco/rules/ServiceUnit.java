@@ -33,19 +33,4 @@ public class ServiceUnit implements RuleUnitData {
         System.out.println("===> someone called me, I'm "+this.getClass().getName());
         return requestData;
     }
-
-    /* 
-    public ServiceUnit(SingletonStore<RequestData> requestData) {
-        this.RequestData = requestData;
-    }
-
-    public SingletonStore<RequestData> getrequestData() {
-        return requestData;
-    }
-
-    public void setrequestData(SingletonStore<RequestData> requestData) {
-        this.requestData = requestData;
-    }
-
-    */
 }
