@@ -48,6 +48,6 @@ public class RequestData implements Serializable {
     
     @Override
     public String toString() {
-        return "RequestData: key["+key+"] useRules["+useRules+"] ruleResult["+ruleResult+"]";
+        return "RequestData: key["+key+"] useRules["+useRules+"] ruleResult["+ruleResult+"] message["+message+"]";
     }
 }
