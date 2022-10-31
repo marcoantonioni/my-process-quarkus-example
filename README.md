@@ -3,7 +3,7 @@
 
 ## Creazione immagine docker
 
-<code>
+```
 #=================================
 # Quarkus immagine docker
 #=================================
@@ -88,6 +88,4 @@ curl -w"\n" -sX GET ${URL}/MyRequest -H 'accept: application/json' | jq .
 # reimposta estensione OpenShift
 quarkus extension add 'openshift'
 quarkus extension remove 'openshift'
-
-
-</code>
+```
