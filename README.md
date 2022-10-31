@@ -27,7 +27,7 @@ curl -w"\n" -sX GET ${URL}/MyRequest -H 'accept: application/json' | jq .
 
 podman login ${QUAY_URL} -u ${QUAY_USER} -p ${QUAY_PWD}
 
-podman tag quay.io/marco/my-process-quarkus-example:1.0.0-SNAPSHOT quay.io/marco_antonioni/my-process-quarkus-example:latest
+podman tag quay.io/marco_antonioni/my-process-quarkus-example:1.0.0-SNAPSHOT quay.io/marco_antonioni/my-process-quarkus-example:latest
 podman push quay.io/marco_antonioni/my-process-quarkus-example:latest
 
 # CR per Openshift
