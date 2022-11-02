@@ -1,15 +1,15 @@
-# Esempio applicazione PAM/DM Quarkus
+# Example PAM/DM Quarkus application
 
 
-## Creazione immagine docker
+## Create a docker image
 
 ```
 #=================================
-# Quarkus immagine docker
+# Quarkus docker image
 #=================================
 
 quarkus extension add 'container-image-docker'
-quarkus extension remove 'container-image-docker'
+quarkus extension add 'smallrye-health'
 
 # application.properties
 quarkus.container-image.registry=quay.io
@@ -30,7 +30,7 @@ podman login ${QUAY_URL} -u ${QUAY_USER} -p ${QUAY_PWD}
 podman tag quay.io/marco_antonioni/my-process-quarkus-example:1.0.0-SNAPSHOT quay.io/marco_antonioni/my-process-quarkus-example:latest
 podman push quay.io/marco_antonioni/my-process-quarkus-example:latest
 
-# CR per Openshift
+# CR - Openshift
 
 apiVersion: apps/v1
 kind: Deployment
@@ -85,7 +85,7 @@ curl -w"\n" -sX POST ${URL}/MyRequest -H 'content-type: application/json' -H 'ac
 curl -w"\n" -sX GET ${URL}/MyRequest -H 'accept: application/json' | jq .
 
 
-# reimposta estensione OpenShift
+# for OCP deployment
 quarkus extension add 'openshift'
-quarkus extension remove 'openshift'
+quarkus extension remove 'container-image-docker'
 ```
